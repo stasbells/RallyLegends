@@ -18,32 +18,32 @@ namespace RallyLegends.Data
 
         private void OnEnable()
         {
-            YandexGame.GetDataEvent += GetLoad;
+            YandexGame.GetDataEvent += OnGetData;
         }
 
         private void OnDisable()
         {
-            YandexGame.GetDataEvent -= GetLoad;
+            YandexGame.GetDataEvent -= OnGetData;
         }
 
         private void Start()
         {
             if (YandexGame.SDKEnabled == true)
-                GetLoad();
+                OnGetData();
         }
 
         private void OnApplicationPause(bool pause)
         {
             if (Application.platform == RuntimePlatform.Android)
-                Save();
+                OnSave();
         }
 
         private void OnApplicationQuit()
         {
-            Save();
+            OnSave();
         }
 
-        public void Save()
+        public void OnSave()
         {
             SavedDataStruct savedData = new()
             {
@@ -80,7 +80,7 @@ namespace RallyLegends.Data
             YandexGame.SaveProgress();
         }
 
-        public void GetLoad()
+        public void OnGetData()
         {
             if (YandexGame.savesData.JsonSavedData == null)
                 return;

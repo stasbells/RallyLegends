@@ -32,13 +32,13 @@ namespace RallyLegends.GameLogic
 
         private void OnEnable()
         {
-            _counter.Finished += GetReward;
+            _counter.Finished += OnFinishedGetReward;
             YandexGame.onGetLeaderboard += OnGetLeaderboard;
         }
 
         private void OnDisable()
         {
-            _counter.Finished -= GetReward;
+            _counter.Finished -= OnFinishedGetReward;
             YandexGame.onGetLeaderboard -= OnGetLeaderboard;
         }
 
@@ -60,7 +60,7 @@ namespace RallyLegends.GameLogic
 
         private void GetDoubleReward() => YandexGame.savesData.Reward += _reward;
 
-        private void GetReward()
+        private void OnFinishedGetReward()
         {
             _reward = GetRewardForTime() + GetRewardForWinning(_level.GetFinishResault());
             YandexGame.savesData.Reward = _reward;

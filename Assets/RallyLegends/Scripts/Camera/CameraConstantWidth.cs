@@ -2,12 +2,13 @@ using UnityEngine;
 
 namespace RallyLegends.CameraSettings
 {
+    [RequireComponent(typeof(Camera))]
     public class CameraConstantWidth : MonoBehaviour
     {
         [SerializeField] private Vector2 _defaultResolution = new(720, 1280);
         [SerializeField, Range(0f, 1f)] private float _widthOrHeight = 0;
 
-        private Camera _componentCamera;
+        private Camera _camera;
 
         private float _targetAspect;
         private float _currentAspect;
@@ -16,9 +17,9 @@ namespace RallyLegends.CameraSettings
 
         private void Start()
         {
-            _componentCamera = GetComponent<Camera>();
-            _currentAspect = _componentCamera.aspect;
-            _initialFov = _componentCamera.fieldOfView;
+            _camera = GetComponent<Camera>();
+            _currentAspect = _camera.aspect;
+            _initialFov = _camera.fieldOfView;
 
             _targetAspect = _defaultResolution.x / _defaultResolution.y;
             _horizontalFov = CalculateVerticalFov(_initialFov, 1 / _targetAspect);
@@ -28,7 +29,7 @@ namespace RallyLegends.CameraSettings
 
         private void Update()
         {
-            if (_componentCamera.aspect != _currentAspect)
+            if (_camera.aspect != _currentAspect)
                 AdjustFieldOfView();
         }
 
@@ -42,10 +43,10 @@ namespace RallyLegends.CameraSettings
 
         private void AdjustFieldOfView()
         {
-            float constantWidthFov = CalculateVerticalFov(_horizontalFov, _componentCamera.aspect);
+            float constantWidthFov = CalculateVerticalFov(_horizontalFov, _camera.aspect);
 
-            _componentCamera.fieldOfView = Mathf.Lerp(constantWidthFov, _initialFov, _widthOrHeight);
-            _currentAspect = _componentCamera.aspect;
+            _camera.fieldOfView = Mathf.Lerp(constantWidthFov, _initialFov, _widthOrHeight);
+            _currentAspect = _camera.aspect;
         }
     }
 }

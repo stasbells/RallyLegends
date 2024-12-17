@@ -23,12 +23,12 @@ namespace RallyLegends.GameLogic
 
         private void OnEnable()
         {
-            _carSelector.CarChanged += SetCurrentCar;
+            _carSelector.CarChanged += OnCarChangedSetCurrent;
         }
 
         private void OnDisable()
         {
-            _carSelector.CarChanged -= SetCurrentCar;
+            _carSelector.CarChanged -= OnCarChangedSetCurrent;
         }
 
         private void Update()
@@ -73,7 +73,7 @@ namespace RallyLegends.GameLogic
                 ShowInfo();
         }
 
-        private void SetCurrentCar(Car car)
+        private void OnCarChangedSetCurrent(Car car)
         {
             _curentCar = car;
             _colors = _curentCar.GetComponentInChildren<Container>();

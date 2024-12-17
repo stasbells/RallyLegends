@@ -47,17 +47,17 @@ namespace RallyLegends.GameLogic
 
         private void OnEnable()
         {
-            _lapCounter.Finished += DisableView;
+            _lapCounter.Finished += OnFinishedDisableView;
         }
 
         private void OnDisable()
         {
-            _lapCounter.Finished -= DisableView;
+            _lapCounter.Finished -= OnFinishedDisableView;
         }
 
         public bool GetFinishResault() => _playerCar.TotalDistance > _botCar.TotalDistance;
 
-        private UnityAction FinishResault() => _ = GetFinishResault() ? Won : Lost;
+        private UnityAction OnGetFinishResault() => _ = GetFinishResault() ? Won : Lost;
 
         private void GetComponents()
         {
@@ -108,7 +108,7 @@ namespace RallyLegends.GameLogic
             _volumeController.AddSourse(_playerCar.GetComponentInChildren<ExplosionStateSwitch>().AudioSource);
         }
 
-        private void DisableView()
+        private void OnFinishedDisableView()
         {
             _stopwatch.TimeStop();
             _stopwatch.TimeReset();
@@ -121,7 +121,7 @@ namespace RallyLegends.GameLogic
 
             _finishScreen.gameObject.SetActive(true);
 
-            FinishResault()?.Invoke();
+            OnGetFinishResault()?.Invoke();
         }
     }
 }

@@ -90,10 +90,10 @@ namespace RallyLegends.GameLogic
         private void OnPlayButtonClick()
         {
             _startScreen.Close();
-            StartGame();
+            OnStartGame();
         }
 
-        private void StartGame()
+        private void OnStartGame()
         {
             GameStarted?.Invoke();
             _sceneTransition.GoToGame();
