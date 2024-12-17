@@ -1,0 +1,19 @@
+{
+  "idSave": 9452,
+  "isFirstSession": true,
+  "language": "ru",
+  "promptDone": false,
+  "money": 0,
+  "newPlayerName": "Hello!",
+  "openLevels": [
+    false,
+    true,
+    false
+  ],
+  "JsonSavedData": "{\n    \"WalletData\": {\n        \"Money\": 41511\n    },\n    \"GarageData\": {\n        \"Items\": [\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": true\n            }\n        ]\n    },\n    \"MapData\": {\n        \"Items\": [\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            }\n        ]\n    },\n    \"ColorsData\": {\n        \"Colors\": [\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": true\n            },\n            {\n                \"IsBuyed\": false\n            },\n            {\n                \"IsBuyed\": true\n            }\n        ]\n    },\n    \"MusicVolumeData\": {\n        \"VolumeValue\": 0.3375524580478668\n    },\n    \"EffectsVolumeData\": {\n        \"VolumeValue\": 0.34075087308883669\n    }\n}",
+  "Reward": 0,
+  "MapIndex": 0,
+  "CarIndex": 0,
+  "BotIndex": 0,
+  "ColorIndex": 2
+}
