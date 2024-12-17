@@ -15,7 +15,7 @@ namespace RallyLegends.UI
         private float _previousDistance = 0f;
         private AnimateCarAlongSpline _targetCar;
 
-        public event UnityAction Finised;
+        public event UnityAction Finished;
         public event UnityAction LapComplete;
 
         private void OnEnable()
@@ -29,21 +29,28 @@ namespace RallyLegends.UI
                 return;
 
             if (_targetCar.CurrentDistance < _previousDistance)
-            {
-                _currentLap++;
-                LapComplete?.Invoke();
-            }
+                OnLapComplete();
+
 
             if (_currentLap > Constants.LapCount)
-            {
-                _currentLap = 0;
-                Finised?.Invoke();
-            }
+                OnFinished();
 
             _previousDistance = _targetCar.CurrentDistance;
             _currentLapText.text = _currentLap.ToString();
         }
 
         public void SetTarget(AnimateCarAlongSpline target) => _targetCar = target;
+
+        private void OnLapComplete()
+        {
+            _currentLap++;
+            LapComplete?.Invoke();
+        }
+
+        private void OnFinished()
+        {
+            _currentLap = 0;
+            Finished?.Invoke();
+        }
     }
 }

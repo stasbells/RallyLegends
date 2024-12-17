@@ -47,12 +47,12 @@ namespace RallyLegends.GameLogic
 
         private void OnEnable()
         {
-            _lapCounter.Finised += DisableView;
+            _lapCounter.Finished += DisableView;
         }
 
         private void OnDisable()
         {
-            _lapCounter.Finised -= DisableView;
+            _lapCounter.Finished -= DisableView;
         }
 
         public bool GetFinishResault() => _playerCar.TotalDistance > _botCar.TotalDistance;

@@ -32,13 +32,13 @@ namespace RallyLegends.GameLogic
 
         private void OnEnable()
         {
-            _counter.Finised += GetReward;
+            _counter.Finished += GetReward;
             YandexGame.onGetLeaderboard += OnGetLeaderboard;
         }
 
         private void OnDisable()
         {
-            _counter.Finised -= GetReward;
+            _counter.Finished -= GetReward;
             YandexGame.onGetLeaderboard -= OnGetLeaderboard;
         }
 
