@@ -26,13 +26,13 @@ namespace RallyLegends.UI
 
         private void OnEnable()
         {
-            _level.Won += ShowWinnerBord;
+            _level.Won += ShowWinnerBoard;
             _level.Lost += ShowLoserBoard;
         }
 
         private void OnDisable()
         {
-            _level.Won -= ShowWinnerBord;
+            _level.Won -= ShowWinnerBoard;
             _level.Lost -= ShowLoserBoard;
         }
 
@@ -42,7 +42,7 @@ namespace RallyLegends.UI
             _sceneTransition.GoToMenu();
         }
 
-        private void ShowWinnerBord()
+        private void ShowWinnerBoard()
         {
             SetInteractable(true);
             _winnerBoard.gameObject.SetActive(true);
