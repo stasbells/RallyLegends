@@ -58,7 +58,6 @@ GameObject:
   - component: {fileID: 6319218027751316454}
   - component: {fileID: 2955329688987892432}
   - component: {fileID: 3672477712916145943}
-  - component: {fileID: 7248031921081896403}
   - component: {fileID: 8635126388398732496}
   - component: {fileID: 919458438108081439}
   - component: {fileID: 3767172414753711077}
@@ -115,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf76ac2e4b6b729469587df769750eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosionSwitch: {fileID: 0}
   <MaxSpeed>k__BackingField: 120
   <Acceleration>k__BackingField: 30
   <OverheatingTime>k__BackingField: 5
@@ -130,24 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eac6ceedc2724f27893c14cb52f1fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scaleCalibration: 0
+  _maxDistance: 0
   _positionFromCenter: -0.5
---- !u!114 &7248031921081896403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7281412586659924798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd08d575c1c88a646835fb7c516cfa72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Default: 0
-  m_Drift:
-    m_IndexUnit: 2
-    m_DefaultValue: -0.5
-    m_DataPoints: []
 --- !u!114 &8635126388398732496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,7 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd661901cc2baa4f82d14cc7cb3664a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _impactForce: 2
 --- !u!54 &4123065135183601736
 Rigidbody:
   m_ObjectHideFlags: 0

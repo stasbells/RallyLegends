@@ -21,9 +21,9 @@ namespace RallyLegends.UI
         [SerializeField] private Button _winterLiaderboardOpenButton;
         [SerializeField] private Button _swampLiaderboardOpenButton;
 
-        public event UnityAction BackToMenuButtonClick;
+        public event UnityAction BackToMenuButtonClicked;
 
-        public void OnMenuButtonClick() => BackToMenuButtonClick?.Invoke();
+        public void OnMenuButtonClick() => BackToMenuButtonClicked?.Invoke();
 
         public void SetActiveForestLiaderbord(bool value) => SetActive(_forestLeaderboard, value);
 

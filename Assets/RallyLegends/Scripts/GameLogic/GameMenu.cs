@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 using RallyLegends.UI;
 
 namespace RallyLegends.GameLogic
@@ -13,32 +12,30 @@ namespace RallyLegends.GameLogic
         [SerializeField] private LeaderboardScreen _leaderboardScreen;
         [SerializeField] private SceneTransition _sceneTransition;
 
-        public event UnityAction GameStarted;
-
         private void OnEnable()
         {
-            _menuScreen.PlayButtonClick += OnStartButtonClick;
-            _menuScreen.GarageButtonClick += OnGarageButtonClick;
-            _menuScreen.SettingsButtonClick += OnSettingsButtonClick;
-            _menuScreen.LeaderboardButtonClick += OnLeaderbordButtonClick;
-            _startScreen.StartButtonClick += OnPlayButtonClick;
-            _startScreen.BackToMenuButtonClick += OnMenuButtonClick;
-            _garageScreen.BackToMenuButtonClick += OnMenuButtonClick;
-            _settingsScreen.BackToMenuButtonClick += OnMenuButtonClick;
-            _leaderboardScreen.BackToMenuButtonClick += OnMenuButtonClick;
+            _menuScreen.PlayButtonClicked += OnStartButtonClick;
+            _menuScreen.GarageButtonClicked += OnGarageButtonClick;
+            _menuScreen.SettingsButtonClicked += OnSettingsButtonClick;
+            _menuScreen.LeaderboardButtonClicked += OnLeaderbordButtonClick;
+            _startScreen.StartButtonClicked += OnPlayButtonClick;
+            _startScreen.BackToMenuButtonClicked += OnMenuButtonClick;
+            _garageScreen.BackToMenuButtonClicked += OnMenuButtonClick;
+            _settingsScreen.BackToMenuButtonClicked += OnMenuButtonClick;
+            _leaderboardScreen.BackToMenuButtonClicked += OnMenuButtonClick;
         }
 
         private void OnDisable()
         {
-            _menuScreen.PlayButtonClick -= OnStartButtonClick;
-            _menuScreen.GarageButtonClick -= OnGarageButtonClick;
-            _menuScreen.SettingsButtonClick -= OnSettingsButtonClick;
-            _menuScreen.LeaderboardButtonClick -= OnLeaderbordButtonClick;
-            _startScreen.StartButtonClick -= OnPlayButtonClick;
-            _startScreen.BackToMenuButtonClick -= OnMenuButtonClick;
-            _garageScreen.BackToMenuButtonClick -= OnMenuButtonClick;
-            _settingsScreen.BackToMenuButtonClick -= OnMenuButtonClick;
-            _leaderboardScreen.BackToMenuButtonClick -= OnMenuButtonClick;
+            _menuScreen.PlayButtonClicked -= OnStartButtonClick;
+            _menuScreen.GarageButtonClicked -= OnGarageButtonClick;
+            _menuScreen.SettingsButtonClicked -= OnSettingsButtonClick;
+            _menuScreen.LeaderboardButtonClicked -= OnLeaderbordButtonClick;
+            _startScreen.StartButtonClicked -= OnPlayButtonClick;
+            _startScreen.BackToMenuButtonClicked -= OnMenuButtonClick;
+            _garageScreen.BackToMenuButtonClicked -= OnMenuButtonClick;
+            _settingsScreen.BackToMenuButtonClicked -= OnMenuButtonClick;
+            _leaderboardScreen.BackToMenuButtonClicked -= OnMenuButtonClick;
         }
 
         private void Start()
@@ -93,10 +90,6 @@ namespace RallyLegends.GameLogic
             OnStartGame();
         }
 
-        private void OnStartGame()
-        {
-            GameStarted?.Invoke();
-            _sceneTransition.GoToGame();
-        }
+        private void OnStartGame() => _sceneTransition.GoToGame();
     }
 }

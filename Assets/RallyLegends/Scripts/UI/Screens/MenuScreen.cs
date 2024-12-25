@@ -11,18 +11,18 @@ namespace RallyLegends.UI
         [SerializeField] private Button _settingsMenuButton;
         [SerializeField] private Button _leaderboardMenuButton;
 
-        public event UnityAction PlayButtonClick;
-        public event UnityAction GarageButtonClick;
-        public event UnityAction SettingsButtonClick;
-        public event UnityAction LeaderboardButtonClick;
+        public event UnityAction PlayButtonClicked;
+        public event UnityAction GarageButtonClicked;
+        public event UnityAction SettingsButtonClicked;
+        public event UnityAction LeaderboardButtonClicked;
 
-        public void OnPlayButtonClick() => PlayButtonClick?.Invoke();
+        public void OnPlayButtonClick() => PlayButtonClicked?.Invoke();
 
-        public void OnGarageButtonClick() => GarageButtonClick?.Invoke();
+        public void OnGarageButtonClick() => GarageButtonClicked?.Invoke();
 
-        public void OnSettingsButtonClick() => SettingsButtonClick?.Invoke();
+        public void OnSettingsButtonClick() => SettingsButtonClicked?.Invoke();
 
-        public void OnLeaderboardButtonClick() => LeaderboardButtonClick?.Invoke();
+        public void OnLeaderboardButtonClick() => LeaderboardButtonClicked?.Invoke();
 
         public override void Open()
         {

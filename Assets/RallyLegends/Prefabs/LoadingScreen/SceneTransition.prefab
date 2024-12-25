@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f59e2876ea9142142b143515b809c0ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadingPresentage: {fileID: 2071824344713871168}
+  "_loadingPre\u0441entage": {fileID: 2071824344713871168}
   _loadingProgressBar: {fileID: 2267527837824881939}
 --- !u!225 &6476092331687198985
 CanvasGroup:

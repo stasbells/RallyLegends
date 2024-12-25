@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace RallyLegends.Sound
 {
@@ -7,7 +6,5 @@ namespace RallyLegends.Sound
     public class ButtonClickSound : MonoBehaviour
     {
         [SerializeField] private AudioSource _buttonClickSound;
-
-        public void PlaySound(Button button) => _buttonClickSound.Play();
     }
 }

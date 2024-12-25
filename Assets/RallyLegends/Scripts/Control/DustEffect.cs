@@ -1,5 +1,6 @@
 using UnityEngine;
-using RallyLegends.UI;
+using UnityEngine.SceneManagement;
+using RallyLegends.Data;
 
 namespace RallyLegends.Control
 {
@@ -10,7 +11,7 @@ namespace RallyLegends.Control
 
         private void OnEnable()
         {
-            if (FindFirstObjectByType<StartScreen>())
+            if (SceneManager.GetActiveScene().buildIndex == Constants.MenuSceneIndex)
                 Stop();
             else
                 Play();

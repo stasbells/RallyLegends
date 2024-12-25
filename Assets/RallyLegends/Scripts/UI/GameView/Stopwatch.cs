@@ -14,7 +14,6 @@ namespace RallyLegends.UI
         private float _totalTime;
         private bool _srt = false;
 
-        public bool Srt => _srt;
         public float Resault => _resault;
 
         private void Awake()

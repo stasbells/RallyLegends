@@ -37,14 +37,6 @@ namespace RallyLegends.GameLogic
                 LockImage.gameObject.SetActive(false);
         }
 
-        public void SelectDefaultColor()
-        {
-            int defaultColorIndex = 0;
-
-            if (!_currentColor.IsBuyed)
-                SelectProduct(defaultColorIndex);
-        }
-
         public override void ChangeProduct(int changer)
         {
             CurrentProductIndex = Mathf.Clamp(CurrentProductIndex += changer, 0, _colors.ItemsCount - 1);

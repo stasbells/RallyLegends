@@ -10,9 +10,9 @@ namespace RallyLegends.UI
         [SerializeField] private Slider _volumeSlider;
         [SerializeField] private Slider _soundSlider;
 
-        public event UnityAction BackToMenuButtonClick;
+        public event UnityAction BackToMenuButtonClicked;
 
-        public void OnBackToMenuButtonClick() => BackToMenuButtonClick?.Invoke();
+        public void OnBackToMenuButtonClick() => BackToMenuButtonClicked?.Invoke();
 
         public override void Open()
         {

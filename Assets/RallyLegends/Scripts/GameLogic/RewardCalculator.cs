@@ -10,7 +10,6 @@ namespace RallyLegends.GameLogic
     public class RewardCalculator : MonoBehaviour
     {
         [SerializeField] private LevelInstaller _level;
-        [SerializeField] private float _rewardIndex;
 
         [Header("Text")]
         [SerializeField] private TMP_Text _rewardForWinningText;
@@ -20,9 +19,11 @@ namespace RallyLegends.GameLogic
         [SerializeField] private LapCounter _counter;
         [SerializeField] private Stopwatch _stopwatch;
 
-        private const int MaxRewardForTime = 100;
-        private const int RewardForWinning = 50;
-        private const int MinReward = 0;
+        [Header("Reward Parameters")]
+        [SerializeField] private int _maxRewardForTime;
+        [SerializeField] private int _rewardForWinning;
+        [SerializeField] private int _minReward;
+        [SerializeField] private float _rewardIndex;
 
         private int _result;
         private int _reward;
@@ -43,8 +44,14 @@ namespace RallyLegends.GameLogic
 
         public void GetLeaderboard(string technoName)
         {
+            int maxQuantityPlayers = 10;
+            int quantityTop = 3;
+            int quantityAround = 3;
+            string photoSize = "small";
+
             _technoName = technoName;
-            YandexGame.GetLeaderboard(technoName, 10, 3, 3, "small");
+
+            YandexGame.GetLeaderboard(technoName, maxQuantityPlayers, quantityTop, quantityAround, photoSize);
         }
 
         public void ExampleOpenRewardAd(int id)
@@ -53,9 +60,9 @@ namespace RallyLegends.GameLogic
             YandexGame.RewVideoShow(id);
         }
 
-        private int GetRewardForTime() => Mathf.Clamp(MaxRewardForTime - (int)(_stopwatch.Resault / _rewardIndex), MinReward, MaxRewardForTime);
+        private int GetRewardForTime() => Mathf.Clamp(_maxRewardForTime - (int)(_stopwatch.Resault / _rewardIndex), _minReward, _maxRewardForTime);
 
-        private int GetRewardForWinning(bool value) => value ? RewardForWinning : MinReward;
+        private int GetRewardForWinning(bool value) => value ? _rewardForWinning : _minReward;
 
         private void GetDoubleReward() => YandexGame.savesData.Reward += _reward;
 
@@ -94,9 +101,9 @@ namespace RallyLegends.GameLogic
             float secondsScore = _stopwatch.Resault;
             int indexComma = secondsScore.ToString().IndexOf(",");
 
-            string rec = secondsScore.ToString();
-            string sec = rec.Remove(indexComma);
-            string milSec = rec.Remove(0, indexComma + 1);
+            string result = secondsScore.ToString();
+            string sec = result.Remove(indexComma);
+            string milSec = result.Remove(0, indexComma + 1);
 
             if (milSec.Length > 3)
                 milSec = milSec.Remove(3);
@@ -105,8 +112,8 @@ namespace RallyLegends.GameLogic
             else if (milSec.Length == 1)
                 milSec += "00";
 
-            rec = sec + milSec;
-            _result = int.Parse(rec);
+            result = sec + milSec;
+            _result = int.Parse(result);
 
             GetLeaderboard(technoName);
         }

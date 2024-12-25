@@ -18,7 +18,7 @@ namespace RallyLegends.UI
         [SerializeField] private Button _buyCarButton;
         [SerializeField] private Button _buyColorButton;
 
-        public event UnityAction BackToMenuButtonClick;
+        public event UnityAction BackToMenuButtonClicked;
 
         private void Update()
         {
@@ -32,7 +32,7 @@ namespace RallyLegends.UI
             }
         }
 
-        public void OnMenuButtonClick() => BackToMenuButtonClick?.Invoke();
+        public void OnMenuButtonClick() => BackToMenuButtonClicked?.Invoke();
 
         public override void Open()
         {

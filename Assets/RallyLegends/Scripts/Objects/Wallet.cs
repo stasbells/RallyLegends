@@ -11,8 +11,6 @@ namespace RallyLegends.Objects
 
         public void Pay(int price) => _money -= price;
 
-        public void GetReward(int money) => _money += money;
-
         public void LoadData(WalletData data) => _money = data.Money;
     }
 }

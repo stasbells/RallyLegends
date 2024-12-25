@@ -6,11 +6,11 @@ namespace RallyLegends.Control
 {
     public class Speedometer : MonoBehaviour
     {
+        private const float MaxSpeed = 76f;
+
         [SerializeField] private RectTransform _arrow;
         [SerializeField] private TMP_Text _text;
         [SerializeField] private float _start;
-
-        private const float MaxSpeed = 76f;
 
         private AnimateCarAlongSpline _target;
 

@@ -11,10 +11,9 @@ namespace RallyLegends.Control
     [RequireComponent(typeof(ISpeedController), typeof(Car))]
     public class AnimateCarAlongSpline : MonoBehaviour
     {
+        [SerializeField] private float _scaleCalibration;
+        [SerializeField] private float _maxDistance;
         [SerializeField] private float _positionFromCenter;
-
-        private const float ScaleCalibration = 5f;
-        private const float MaxDistance = 1f;
 
         private Car _carToAnimate;
         private Spline _spline;
@@ -78,8 +77,8 @@ namespace RallyLegends.Control
 
         private void CountDistances()
         {
-            _currentDistance = (_currentDistance + _currentSpeed * Time.deltaTime / _splineLength / ScaleCalibration) % MaxDistance;
-            _totalDistance += _currentSpeed * Time.deltaTime / (_splineLength * Constants.LapCount) / ScaleCalibration;
+            _currentDistance = (_currentDistance + _currentSpeed * Time.deltaTime / _splineLength / _scaleCalibration) % _maxDistance;
+            _totalDistance += _currentSpeed * Time.deltaTime / (_splineLength * Constants.LapCount) / _scaleCalibration;
         }
 
         private void MoveByCalculation()

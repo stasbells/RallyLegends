@@ -6,19 +6,18 @@ namespace RallyLegends.Control
 {
     public class PlayerSpeedController : MonoBehaviour, ISpeedController
     {
-        [SerializeField] ExplosionStateSwitch _explosionSwitch;
-
         private const float MinSpeed = 0f;
         private const float MaxSpeedFactor = 0.2f;
         private const float OverheatingFactor = 1.5f;
 
-        private float _counter = 0f;
-        private float _overheatingSpeedValue = 0.8f;
-
-        private bool _isOverheating = false;
+        [SerializeField] private ExplosionStateSwitch _explosionSwitch;
 
         private OverheatWarning _overheatWarning;
         private PlayerInput _playerInput;
+
+        private float _counter = 0f;
+        private float _overheatingSpeedValue = 0.8f;
+        private bool _isOverheating = false;
 
         [field: SerializeField] public float MaxSpeed { get; private set; }
         [field: SerializeField] public float Acceleration { get; private set; }

@@ -9,9 +9,9 @@ namespace RallyLegends.Scene
 
         private static string GetSceneNameFromScenePath(string scenePath)
         {
-            var sceneNameStart = scenePath.LastIndexOf("/", StringComparison.Ordinal) + 1;
-            var sceneNameEnd = scenePath.LastIndexOf(".", StringComparison.Ordinal);
-            var sceneNameLength = sceneNameEnd - sceneNameStart;
+            int sceneNameStart = scenePath.LastIndexOf("/", StringComparison.Ordinal) + 1;
+            int sceneNameEnd = scenePath.LastIndexOf(".", StringComparison.Ordinal);
+            int sceneNameLength = sceneNameEnd - sceneNameStart;
 
             return scenePath.Substring(sceneNameStart, sceneNameLength);
         }

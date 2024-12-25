@@ -46462,11 +46462,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ddfd27e6ab0584418099984a60a5f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _level: {fileID: 2111723287}
   _rewardForWinningText: {fileID: 980411987}
   _rewardForTimeText: {fileID: 2093821318}
-  _level: {fileID: 2111723287}
   _counter: {fileID: 1978707577}
   _stopwatch: {fileID: 1907257898}
+  _maxRewardForTime: 100
+  _rewardForWinning: 50
+  _minReward: 0
   _rewardIndex: 1.5
 --- !u!224 &1786434681
 RectTransform:
@@ -47137,9 +47140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _volumeSlider: {fileID: 0}
-  _AudioSources:
-  - {fileID: 1160837275}
-  - {fileID: 1944578618}
+  _audioSources: []
 --- !u!114 &1944578623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58255,6 +58256,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d3e731bd2836a4baa03b92f62d644b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cameraFollower: {fileID: 307854952}
+  _volumeController: {fileID: 1944578622}
+  _garage: {fileID: 1072463889}
+  _botStorage: {fileID: 1471762579}
+  _mapStorage: {fileID: 515341777}
   _stopwatch: {fileID: 1907257898}
   _countdown: {fileID: 1278014086}
   _lapCounter: {fileID: 1978707577}
@@ -58262,11 +58268,6 @@ MonoBehaviour:
   _overheatWarning: {fileID: 1692484532}
   _tutorial: {fileID: 907216736}
   _finishScreen: {fileID: 89549647}
-  _cameraFollower: {fileID: 307854952}
-  _volumeController: {fileID: 1944578622}
-  _garage: {fileID: 1072463889}
-  _botStorage: {fileID: 1471762579}
-  _mapStorage: {fileID: 515341777}
 --- !u!4 &2111723288
 Transform:
   m_ObjectHideFlags: 0

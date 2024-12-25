@@ -7,13 +7,16 @@ namespace RallyLegends.Control
     public class BotSpeedController : MonoBehaviour, ISpeedController
     {
         [SerializeField] private float _maxSpeed;
+        [SerializeField] private float _minSpeed;
         [SerializeField] private float _acceleration;
 
-        private const float MinSpeed = 10f;
-        private const float SpeedLimit = 1.4f;
-        private const float IncreaseFactor = 2f;
-        private const float MaxOvertaking = 0.025f;
-        private const float MaxRetard = -0.004f;
+        [Header("Speed Parameters")]
+        [SerializeField] private float _speedLimit;
+        [SerializeField] private float _increaseFactor;
+
+        [Header("Distance Parameters")]
+        [SerializeField] private float MaxOvertaking;
+        [SerializeField] private float MaxRetard;
 
         private AnimateCarAlongSpline _targetCar;
         private AnimateCarAlongSpline _botCar;
@@ -31,7 +34,7 @@ namespace RallyLegends.Control
                 return Decrease(speed);
 
             if (Distance() < MaxRetard)
-                return Increase(speed, IncreaseFactor, SpeedLimit);
+                return Increase(speed, _increaseFactor, _speedLimit);
 
             return Increase(speed);
         }
@@ -41,9 +44,9 @@ namespace RallyLegends.Control
         private float Distance() => _botCar.TotalDistance - _targetCar.TotalDistance;
 
         private float Decrease(float speed, float factor = 1f) => 
-            Math.Clamp(speed - _acceleration * factor * Time.deltaTime, MinSpeed, _maxSpeed);
+            Math.Clamp(speed - _acceleration * factor * Time.deltaTime, _minSpeed, _maxSpeed);
 
         private float Increase(float speed, float factor = 1f, float speedLimit = 1f) => 
-            Math.Clamp(speed + _acceleration * factor * Time.deltaTime, MinSpeed, _maxSpeed * speedLimit);
+            Math.Clamp(speed + _acceleration * factor * Time.deltaTime, _minSpeed, _maxSpeed * speedLimit);
     }
 }

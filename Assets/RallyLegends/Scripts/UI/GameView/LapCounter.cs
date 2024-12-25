@@ -16,7 +16,6 @@ namespace RallyLegends.UI
         private AnimateCarAlongSpline _targetCar;
 
         public event UnityAction Finished;
-        public event UnityAction LapComplete;
 
         private void OnEnable()
         {
@@ -40,11 +39,7 @@ namespace RallyLegends.UI
 
         public void SetTarget(AnimateCarAlongSpline target) => _targetCar = target;
 
-        private void OnLapComplete()
-        {
-            _currentLap++;
-            LapComplete?.Invoke();
-        }
+        private void OnLapComplete() => _currentLap++;
 
         private void OnFinished()
         {

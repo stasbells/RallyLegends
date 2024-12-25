@@ -19,8 +19,8 @@ namespace RallyLegends.UI
         [SerializeField] private Button _backToMenuButton;
         [SerializeField] private Button _buyMapButton;
 
-        public event UnityAction StartButtonClick;
-        public event UnityAction BackToMenuButtonClick;
+        public event UnityAction StartButtonClicked;
+        public event UnityAction BackToMenuButtonClicked;
 
         private void Update()
         {
@@ -34,9 +34,9 @@ namespace RallyLegends.UI
             }
         }
 
-        public void OnStartButtonClick() => StartButtonClick?.Invoke();
+        public void OnStartButtonClick() => StartButtonClicked?.Invoke();
 
-        public void OnMenuButtonClick() => BackToMenuButtonClick?.Invoke();
+        public void OnMenuButtonClick() => BackToMenuButtonClicked?.Invoke();
 
         public void BuyMapButtonView(bool value)
         {

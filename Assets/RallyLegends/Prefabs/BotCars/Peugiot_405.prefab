@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 7753366175104522897}
   - component: {fileID: 7688958690534054376}
   - component: {fileID: 1091066242622434572}
-  - component: {fileID: 991347229020442969}
   - component: {fileID: 6467296866901287679}
   - component: {fileID: 396317220144763871}
   - component: {fileID: 4392871132904236675}
@@ -280,7 +279,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxSpeed: 60
+  _minSpeed: 10
   _acceleration: 20
+  _speedLimit: 1.4
+  _increaseFactor: 2
+  MaxOvertaking: 0.025
+  MaxRetard: -0.004
 --- !u!114 &1091066242622434572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,24 +297,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eac6ceedc2724f27893c14cb52f1fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scaleCalibration: 5
+  _maxDistance: 1
   _positionFromCenter: 0.5
---- !u!114 &991347229020442969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28101278621012448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd08d575c1c88a646835fb7c516cfa72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Default: 0
-  m_Drift:
-    m_IndexUnit: 2
-    m_DefaultValue: 0.5
-    m_DataPoints: []
 --- !u!114 &6467296866901287679
 MonoBehaviour:
   m_ObjectHideFlags: 0

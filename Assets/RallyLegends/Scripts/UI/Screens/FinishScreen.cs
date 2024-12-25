@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 using RallyLegends.GameLogic;
 
@@ -16,8 +15,6 @@ namespace RallyLegends.UI
 
         private CanvasGroup _canvasGroup;
 
-        public event UnityAction RestartButtonClick;
-
         private void Awake()
         {
             _canvasGroup = GetComponent<CanvasGroup>();
@@ -26,19 +23,18 @@ namespace RallyLegends.UI
 
         private void OnEnable()
         {
-            _level.Won += OnFinishShowWinnerBoard;
-            _level.Lost += OnFinishShowLoserBoard;
+            _level.LoserFinished += OnFinishShowWinnerBoard;
+            _level.WinnerFinished += OnFinishShowLoserBoard;
         }
 
         private void OnDisable()
         {
-            _level.Won -= OnFinishShowWinnerBoard;
-            _level.Lost -= OnFinishShowLoserBoard;
+            _level.LoserFinished -= OnFinishShowWinnerBoard;
+            _level.WinnerFinished -= OnFinishShowLoserBoard;
         }
 
         public void OnRestartButtonClick()
         {
-            RestartButtonClick?.Invoke();
             _sceneTransition.GoToMenu();
         }
 

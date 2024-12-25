@@ -19,8 +19,8 @@ namespace RallyLegends.GameLogic
         [SerializeField] private Container _garage;
         [SerializeField] private Container _botStorage;
         [SerializeField] private Container _mapStorage;
-        [Header("UIElements")]
 
+        [Header("UIElements")]
         [SerializeField] private Stopwatch _stopwatch;
         [SerializeField] private Countdown _countdown;
         [SerializeField] private LapCounter _lapCounter;
@@ -34,8 +34,8 @@ namespace RallyLegends.GameLogic
         private AnimateCarAlongSpline _playerCar;
         private AnimateCarAlongSpline _botCar;
 
-        public event UnityAction Won;
-        public event UnityAction Lost;
+        public event UnityAction LoserFinished;
+        public event UnityAction WinnerFinished;
 
         public int MapId => _mapId;
 
@@ -57,7 +57,7 @@ namespace RallyLegends.GameLogic
 
         public bool GetFinishResault() => _playerCar.TotalDistance > _botCar.TotalDistance;
 
-        private UnityAction OnGetFinishResault() => _ = GetFinishResault() ? Won : Lost;
+        private UnityAction OnGetFinishResault() => _ = GetFinishResault() ? LoserFinished : WinnerFinished;
 
         private void GetComponents()
         {
