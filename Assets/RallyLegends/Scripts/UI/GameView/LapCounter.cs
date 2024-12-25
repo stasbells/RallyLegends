@@ -31,7 +31,6 @@ namespace RallyLegends.UI
             if (_targetCar.CurrentDistance < _previousDistance)
                 OnLapComplete();
 
-
             if (_currentLap > Constants.LapCount)
                 OnFinished();
 

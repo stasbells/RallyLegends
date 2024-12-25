@@ -20,7 +20,6 @@ namespace RallyLegends.GameLogic
         [SerializeField] private LapCounter _counter;
         [SerializeField] private Stopwatch _stopwatch;
 
-
         private const int MaxRewardForTime = 100;
         private const int RewardForWinning = 50;
         private const int MinReward = 0;
